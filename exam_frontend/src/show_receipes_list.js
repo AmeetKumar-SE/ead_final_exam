@@ -28,7 +28,7 @@ const RecipeList = () => {
             <img src={recipe.image} alt={recipe.image} />
             <button >Update</button>
             <button onClick={()=>{
-                window.location.href = "http://localhost:3005/recipes/delete" + recipe._id;
+                window.location.href = "http://localhost:3005/recipes/delete/" + recipe._id;
             }}>Delete</button>
           </li>
         ))}

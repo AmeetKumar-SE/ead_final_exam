@@ -21,7 +21,7 @@ function App() {
         </a>
       </header> */}
 
-      {/* <RecipeForm/> */}
+      <RecipeForm/>
       <RecipeList/>
     </div>
   );

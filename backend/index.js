@@ -28,6 +28,7 @@ app.post('/recipe/save', async (req, res) => {
         console.log(" Not Created")
     }
     console.log("Created")
+    res.redirect('http://localhost:3000/')
     res.end();
 
 })
@@ -38,9 +39,10 @@ app.get('/recipes', async (req, res) => {
 }) 
 
 app.get('/recipes/delete/:pid', async (req, res) => {
-    const product = await mongoReicpe.deleteOne(req.params.pid)
-    res.redirect('/')
-    res.end()
+    console.log("Inside Git")
+    const product = await mongoReicpe.deleteOne({_id: req.params.pid})
+    res.redirect('http://localhost:3000/')
+    res.end();
 })
 
 app.get('/', (req, res) => {
