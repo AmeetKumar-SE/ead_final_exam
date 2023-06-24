@@ -37,6 +37,12 @@ app.get('/recipes', async (req, res) => {
       res.send(receipes);
 }) 
 
+app.get('/recipes/delete/:pid', async (req, res) => {
+    const product = await mongoReicpe.deleteOne(req.params.pid)
+    res.redirect('/')
+    res.end()
+})
+
 app.get('/', (req, res) => {
     res.render('home');
 })
