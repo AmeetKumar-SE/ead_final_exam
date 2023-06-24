@@ -39,8 +39,13 @@ app.get('/recipes', async (req, res) => {
 }) 
 
 app.get('/recipes/delete/:pid', async (req, res) => {
-    console.log("Inside Git")
     const product = await mongoReicpe.deleteOne({_id: req.params.pid})
+    res.redirect('http://localhost:3000/')
+    res.end();
+})
+
+app.get('/recipes/details/:pid', async (req, res) => {
+    const product = await mongoReicpe.findOne({_id: req.params.pid})
     res.redirect('http://localhost:3000/')
     res.end();
 })

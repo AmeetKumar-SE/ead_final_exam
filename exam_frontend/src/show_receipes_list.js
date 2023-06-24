@@ -26,7 +26,9 @@ const RecipeList = () => {
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
             <img src={recipe.image} alt={recipe.image} />
-            <button >Update</button>
+            <button onClick={()=>{
+                window.location.href = "http://localhost:3005/details/edit/" + recipe._id;
+            }}>Update</button>
             <button onClick={()=>{
                 window.location.href = "http://localhost:3005/recipes/delete/" + recipe._id;
             }}>Delete</button>

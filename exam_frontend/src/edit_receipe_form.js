@@ -15,7 +15,6 @@ const RecipeForm = () => {
     setImage(null);
   };
 
-  
   return (
     <form onSubmit={handleSubmit} method='post' action='/recipe/save'>
       <div>
